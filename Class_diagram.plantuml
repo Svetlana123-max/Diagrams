@@ -1,0 +1,36 @@
+@startuml
+
+title ER Diagram
+
+ entity "Customer" as 01 {
+    *customer_id: integer <<PK>>
+    --
+    *name: text 
+    *email:text 
+    contact number: integer
+    *address: text
+ }
+    entity "Order" as 02 {
+        *order_id: integer <<PK>>
+        --
+        *customer_id <<FK>>
+        *order_date: date
+    }
+
+    entity "Order Line Item" as 03{
+        *order_id: integer <<PK>>
+        *product_id: integer <<PK
+        --
+        *order quantity: integer
+    }
+    entity "Product" as 04 {
+        *product_id: integer <<PK>>
+        --
+        description: text
+    }
+
+ 01||--o{02
+ 02||--|{03
+ 03}o--||04
+
+@enduml
