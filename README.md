@@ -1,0 +1,3 @@
+# PlantUML diagrams:
+* erd
+* sequence
